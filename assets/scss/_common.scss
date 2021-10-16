@@ -1,4 +1,5 @@
 @use "presets/" as *;
+@use "mixins/" as *;
 
 html {
     font-size: $font-size;
@@ -23,4 +24,61 @@ a {
 h1 {
     font-size: 3rem;
     margin: -$gap-md 0 1em;
+    font-family: $font-header;
+    display: block;
+
+    &::after {
+        position: absolute;
+        width: 100%;
+        margin: 0.85em 0 0 $gap;
+        content: "";
+        border-bottom: 3px solid $color-accent-light;
+        box-sizing: border-box;
+    }
+
+    @include xs-min {
+            margin: -$gap-md 0 1em 0;
+            font-size: 3rem;
+    }
 }
+
+h2 {
+    font-family: $font-header;
+    
+    @include xs-min {
+            margin: 60px 0 45px 45px;
+            font-size: 2.5rem;
+    }
+
+   &::before {
+      position: absolute;
+      left: 0;
+      width: 30px;
+      margin: 0.25em 0 0 0;
+      content: "";
+      border-bottom: 3px solid $color-accent-light;
+   }
+
+   &::after {
+      position: absolute;
+      width: 100%;
+      margin: 0.85em 0 0 $gap;
+      content: "";
+      border-bottom: 3px solid $color-accent-light;
+   }
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+p {
+    margin: 0 0 10px;
+  }
+
+
+
+
+
+

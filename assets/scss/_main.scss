@@ -2,20 +2,118 @@
 @use "presets/" as *;
 
 .main {
-    margin-bottom: $gap-xl;
+  margin-bottom: $gap-xl;
 }
 
 .new-films {
-    margin-bottom: $gap-xl;
-    &-row {
-        margin-right: -$gap-sm;
-        margin-left: -$gap-sm;
-        margin-bottom: -$gap;
+  &-row {
+    margin-right: -$gap-sm;
+    margin-left: -$gap-sm;
+    margin-bottom: -$gap;
+  }
+
+  &-item {
+    padding-right: $gap-sm;
+    padding-left: $gap-sm;
+    margin-bottom: $gap;
+
+    &__caption {
+      text-align: center;
     }
 
-    &-item {
-        padding-right: $gap-sm;
-        padding-left: $gap-sm;
-        margin-bottom: 0;
+    &__title {
+      display: block;
+      overflow: hidden;
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+      font-weight: bold;
     }
+
+    &__thumbnail {
+      margin-bottom: 0;
+    }
+
+    &:hover .thumbnail {
+      border-color: $color-accent;
+      background-color: $color-accent;
+    }
+
+    &:hover h3 {
+      color: $color-white;
+    }
+  }
+}
+
+.top-week {
+  &-row {
+    margin-right: -$gap-sm;
+    margin-bottom: -$gap;
+    margin-left: -$gap-sm;
+  }
+
+  &-item {
+    margin-bottom: $gap;
+    padding-right: $gap-sm;
+    padding-left: $gap-sm;
+
+    &:hover .thumbnail {
+      border-color: $color-accent;
+      background-color: $color-accent;
+    }
+
+    &:hover h3 {
+      color: $color-white;
+    }
+
+    &__caption {
+      text-align: center;
+    }
+
+    &__title {
+      display: block;
+      overflow: hidden;
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &__text {
+      text-align: justify;
+    }
+
+    &__thumbnail {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.film-news {
+  &-item {
+    &:hover h3 > a {
+      color: $color-accent;
+    }
+
+    &:hover .thumbnail {
+      border-color: $color-accent;
+      background-color: $color-accent;
+    }
+
+    &:hover .btn-warning {
+      background-color: $color-accent;
+    }
+
+    & h3 > a {
+      transition: color 0.25s;
+    }
+
+    &__button {
+      float: right;
+      margin-bottom: 30px;
+      transition: background-color 0.25s;
+    }
+  }
 }

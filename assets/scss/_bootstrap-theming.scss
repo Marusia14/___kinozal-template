@@ -3,6 +3,7 @@
 
 .navbar-inverse {
   background-color: darken($color-dark, 4%);
+  margin-bottom: 0;
 
   .navbar-nav {
     > .active > a {
@@ -97,4 +98,43 @@
 
 .thumbnail {
   transition: background-color 0.5s;
+  
+  & .caption {
+    padding: 9px;
+    color: $color-deep-dark;
+  }
+}
+
+.btn-warning {
+  color: $color-white;
+  background-color: $color-accent-light;
+  border-color: #eea236;
+}
+
+.container-fluid {
+  padding-right: $gap;
+  padding-left: $gap;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.embed-responsive {
+  border: 1px solid $color-gray;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: $color-white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #777;
+  border-radius: 10px;
 }
