@@ -2,84 +2,94 @@
 @use "mixins/" as *;
 
 html {
-    font-size: $font-size;
-    overflow-x: hidden;
+  font-size: $font-size;
 }
 
 body {
-    font-size: $font-size;
-    font-family: $font-main;
-    overflow-y: scroll;
+  font-size: $font-size;
+  font-family: $font-main;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 a {
-    color: $color-primary;
+  color: $color-primary;
 
-    &:hover,
-    &:focus {
-        color: $color-accent;
-        text-decoration: none;
-    }
+  &:hover,
+  &:focus {
+    color: $color-accent;
+    text-decoration: none;
+  }
 }
 
 h1 {
+  font-size: 3rem;
+  margin: -$gap-md 0 1em;
+  font-family: $font-header;
+  display: block;
+
+  @include sm {
+        margin: 0 0 1em;
+        font-size: 2rem;
+  }
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    margin: 0.85em 0 0 $gap;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+    box-sizing: border-box;
+  }
+
+  @include xs-min {
+    margin: -$gap-md 0 1em 0;
     font-size: 3rem;
-    margin: -$gap-md 0 1em;
-    font-family: $font-header;
-    display: block;
-
-    &::after {
-        position: absolute;
-        width: 100%;
-        margin: 0.85em 0 0 $gap;
-        content: "";
-        border-bottom: 3px solid $color-accent-light;
-        box-sizing: border-box;
-    }
-
-    @include xs-min {
-            margin: -$gap-md 0 1em 0;
-            font-size: 3rem;
-    }
+  }
 }
 
 h2 {
-    font-family: $font-header;
-    
-    @include xs-min {
-            margin: 60px 0 45px 45px;
-            font-size: 2.5rem;
-    }
+  font-family: $font-header;
 
-   &::before {
-      position: absolute;
-      left: 0;
-      width: 30px;
-      margin: 0.25em 0 0 0;
-      content: "";
-      border-bottom: 3px solid $color-accent-light;
-   }
+  @include xs-min {
+    margin: 60px 0 45px 45px;
+    font-size: 2.5rem;
+  }
 
-   &::after {
-      position: absolute;
-      width: 100%;
-      margin: 0.85em 0 0 $gap;
-      content: "";
-      border-bottom: 3px solid $color-accent-light;
-   }
+  @include xs {
+    margin: 45px 0 30px 45px;
+    font-size: 1.75rem;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    margin: 0.25em 0 0 0;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+  }
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    margin: 0.85em 0 0 $gap;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+  }
+}
+
+h3 {
+  @include xs {
+    font-size: 1.25rem;
+  }
 }
 
 section {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 p {
-    margin: 0 0 10px;
-  }
-
-
-
-
-
-
+  margin: 0 0 10px;
+}

@@ -98,6 +98,10 @@
 
 .thumbnail {
   transition: background-color 0.5s;
+
+  @include sm {
+    margin-bottom: 0;
+  }
   
   & .caption {
     padding: 9px;

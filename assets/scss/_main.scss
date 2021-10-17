@@ -2,7 +2,11 @@
 @use "presets/" as *;
 
 .main {
-  margin-bottom: $gap-xl;
+  margin-bottom: 67px;
+
+  @include sm {
+    margin-bottom: 80px;
+  }
 
   .site-search {
     margin-bottom: 45px;
@@ -124,6 +128,10 @@
 
     & h3 > a {
       transition: color 0.25s;
+    }
+
+    &__text {
+      text-align: justify;
     }
 
     &__button {
